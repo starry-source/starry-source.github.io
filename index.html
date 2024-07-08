@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星源 | Starry Source</title>
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+        }
+
+        .a{
+            cursor: pointer;
+        }
+
+        body{
+            display: flex;
+            background-color: #ddd;
+            position: fixed;
+            width:100%;
+            height:100%;
+            background-image: 
+                radial-gradient(circle at 30% 30%,#32ffea30,#00000000 80px),
+                radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 160px),
+                radial-gradient(circle at 20% 70%,#3da86630,#00000000 140px),
+                radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dn{
+            display: none !important;
+        }
+
+        .card{
+            transition: 200ms cubic-bezier(1,0,0,1);
+        }
+
+        .card.bg{
+            transform: translateX(20%);
+            opacity: 0;
+        }
+
+        .card.hide{
+            transform: translateX(-20%);
+            opacity: 0;
+        }
+
+        #hello>p{
+            text-align: center;
+            margin: 0;
+        }
+
+        #box{
+            width: calc(100% - 100px);
+            min-width: 120px;
+            max-width: 1000px;
+            height: calc(100% - 120px);
+            min-height: 300px;
+            max-height: 700px;
+            background-color: #eeeeeea0;
+            border-radius: 15px;
+            box-shadow: #00000040 4px 10px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #box.s{
+            flex-direction: column;
+        }
+
+        #ing{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 10px 15px 15px 15px;
+            max-width: 500px;
+        }
+
+        #box.s>#ing{
+            max-width: unset;
+            padding: 5px 15px 15px 30px;
+        }
+
+        #lang{
+            margin: 10px 0 0 30px;
+        }
+
+        #lang>p{
+            margin: 0;
+        }
+
+        .list{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            border-radius: 10px;
+            /* width: 100%; */
+        }
+
+        .list>.a{
+            display: block;
+            /* width: 100%; */
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: 50ms;
+            margin: 1px 0;
+        }
+
+        .list>.a:hover{
+            background-color: #7f7f7f30;
+        }
+
+        .list>.a:active{
+            opacity: 0.6;
+        }
+
+        .list>.a.sel{
+            background-color: #2983cc;
+            color: #eee;
+        }
+
+        .list.sel{
+            background-color: #ffffff40;
+        }
+
+        .btn{
+            display: inline-block;
+            background: #7f7f7f20;
+            border-radius: 8px;
+            padding: 9px 12px;
+            transition: 80ms;
+            user-select: none;
+            margin: 2px 5px;
+            width: max-content;
+            height: max-content;
+        }
+
+        .btn:hover{
+            filter: brightness(1.2);
+        }
+
+        .btn:active{
+            opacity: 0.6;
+        }
+
+        .btn.sub{
+            background: #2983cc;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <script src="jq.min.js"></script>
+    <div id="hello" class="card">
+        <p style="font-size: 10vh;">你好!</p>
+        <p style="font-size: 7vh;">吃了没?</p>
+        <p>Hello!</p>
+    </div>
+    <div id="box" class="card bg dn">
+        <div id="lang">
+            <p style="font-size: 9vh;">语言</p>
+            <p style="font-size: 6vh;">語言</p>
+            <p>Language</p>
+        </div>
+        <div id="ing">
+            <div>
+                <p style="font-size: 25px; margin-bottom: 10px;">语言 語言 Language</p>
+                <div class="list sel" id="inp-lang">
+                    <a class="a" onclick="cl('zh');$(this).addClass('sel');">现代汉语/現代漢語</a>
+                    <a class="a" onclick="cl('en');$(this).addClass('sel');">English</a>
+                </div>
+            </div>
+            <div id="tyg" style="display: none;">
+                <p style="font-size: 25px; margin-bottom: 10px;" class="tit">字体 字體</p>
+                <div class="list sel" id="inp-fm">
+                    <a class="a" onclick="$('#inp-fm>.a').removeClass('sel');$(this).addClass('sel');fm='hans';
+                $('#sub').text('确定');">简体</a>
+                    <a class="a" onclick="$('#inp-fm>.a').removeClass('sel');$(this).addClass('sel');fm='hant';
+                $('#sub').text('確定');">繁體</a>
+                </div>
+            </div>
+            <div style="flex-grow: 1;display: flex;align-items: end;justify-content: end;">
+            <a class="a btn sub" id="sub" onclick="sub();">确定/確定/Submit</a></div>
+        </div>
+    </div>
+    <script>
+        let lang=-1,fm=-1;
+        function cl(x) {
+            $('#inp-lang>.a').removeClass('sel');
+            lang=x;
+            if(x=='zh'){
+                $('#tyg').show();
+                $('#sub').text('确定/確定');
+            }else if(x=='en'){
+                $('#tyg').hide();
+                $('#inp-fm>.a').removeClass('sel');
+                fm='us';
+                $('#sub').text('Submit');
+            }
+        }
+        function init() {
+            
+            if (window.innerHeight>630) {
+                if(window.innerWidth<window.innerHeight){
+                    $('#box').addClass('s');
+                }else{
+                    $('#box').removeClass('s');
+                }
+            }else{
+                $('#box').removeClass('s');
+            }
+        }
+        window.onresize=init;
+        function sub(){
+            if(lang!=-1 && fm!=-1)
+                window.location.href='content-'+lang+'-'+fm+'.html';
+        }
+
+        init();
+        setTimeout(() => {
+            $('#hello').addClass('hide');
+        }, 2500);
+        setTimeout(() => {
+            $('#box').removeClass('dn');
+            $('#hello').addClass('dn');
+        }, 2700);
+        setTimeout(() => {
+            $('#box').removeClass('bg');
+        }, 2800);
+
+
+    </script>
+</body>
+</html>
