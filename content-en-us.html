@@ -14,7 +14,7 @@
     <div id="ldb">
         <style>
             #ldb{
-                filter: contrast(1);
+                /* filter: contrast(1); */
                 display: block;
                 position: fixed;
                 top: 0;left: 0;height: 100%;width: 100%;
@@ -26,8 +26,28 @@
                     radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
                 overflow: auto;
             }
+
+            
+#ldb {
+    /* display: flex; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* height: 100%; */
+    /* width: 100%; */
+    z-index: 7;
+    background-image:
+        radial-gradient(circle at 30% 30%, #197e7430, #00000000 80px),
+        radial-gradient(circle at 70% 60%, #9e751730, #00000000 160px),
+        radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 140px),
+        radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* flex-direction: column; */
+}
             #ldb>*{
-                color: #000;
+
+                color: #fff;
                 white-space-collapse:preserve;
                 word-break:keep-all;
                 padding: 20px;
@@ -53,11 +73,11 @@
                 opacity: 0.8;
             }
         </style>
-        <div class="lay" style="margin: 0;">
+        <div class="laya" style="margin: 0;">
             <p style="font-size: 40px;">During loading...</p>
             <p style="font-size: 20px;">slide down and take a look >u-)o</p>
         </div>
-        <div class="lay">
+        <div class="laya">
             <div class="highlighta">
             <p style="font-size: 30px;margin:0 10px">渔家傲·Starry Source</p>
             <p style="font-size: 20px;">The wind leading to night,
@@ -75,11 +95,11 @@ through the sky,
 fly in the world so wide.</p>
             </div>
         </div>
-        <div class="lay">
+        <div class="laya">
             <p style="font-size: 40px;">Your network is a bit slow...</p>
             <p style="font-size: 20px;">There's a longer one</p>
         </div>
-        <div class="lay">
+        <div class="laya">
             <div class="highlighta" id="drl">
             <p style="font-size: 30px;margin:0 10px">Dreamlike·Starry Source</p>
             <p style="font-size: 20px;">Well, it's really hard to translate...
