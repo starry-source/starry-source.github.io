@@ -9,28 +9,14 @@
 </head>
 
 <body>
-    <script src="jq.min.js"></script>
+    <script src="/tapple/jq.min.js"></script>
 
     <div id="ldb">
         <style>
-            #ldb{
-                filter: contrast(1);
-                display: block;
-                position: fixed;
-                top: 0;left: 0;height: 100%;width: 100%;
-                z-index: 7;
-                background-image: 
-                    radial-gradient(circle at 30% 30%,#32ffea30,#00000000 80px),
-                    radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 160px),
-                    radial-gradient(circle at 20% 70%,#3da86630,#00000000 140px),
-                    radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
-                overflow: auto;
-            }
             #ldb>*{
-                color: #000;
+                color: #f0f0f0;
                 white-space-collapse:preserve;
                 word-break:keep-all;
-                padding: 20px;
                 margin-top: 0;
             }
             #ldb>*>.highlighta{
@@ -43,35 +29,53 @@
             body{
                 overflow: hidden;
             }
-            #stt:not(.show){
-                transform: translateX(calc(100% + 30px));
-            }
-            #stt{
-                position: fixed;z-index: 8;bottom: 15px;right: 15px;padding: 10px 20px;background-color: #2983cc;color: #fff;border-radius: 10px;display: flex;flex-direction: column;align-items: center;transition: 100ms;box-shadow: #00000050 0 5px 15px;
-            }
-            #stt:hover{
-                opacity: 0.8;
-            }
         </style>
-        <div class="lay" style="margin: 0;">
-            <p style="font-size: 40px;">正在等待載入...</p>
-            <p style="font-size: 20px;">下滑看看吧 >u-)o</p>
+        <div class="lay 0 show0 show" style="margin: 0;">
+            <p style="font-size: 40px;">嗨，別來無恙啊</p>
+            <p style="font-size: 20px;">歡迎來到星源的主頁 >u-)o</p>
         </div>
-        <div class="lay">
-            <div class="highlighta">
-            <p style="font-size: 30px;margin:0 10px">漁家傲·星源</p>
-            <p style="font-size: 20px;">向晚暮風拂袖顧，嬋娟星海耀千古。亭台既去詩不復，星源䖏，銀漢皎皎月明孤。
-日輪月轉一仰俯，河山越盡滄桑書。千里東風青雲負，乾坤舞，扶搖浩浩寰宇舒。</p>
-            </div>
+        <div class="lay 1" style="margin: 0;">
+            <p style="font-size: 40px;text-align: left;">纖雲弄巧，銀漢迢迢暗度。</p>
+            <p style="font-size: 30px;">金風玉露一相逢，便勝卻人間無數。</p>
+            <p style="text-align: right;margin-top: 5px;">———《鵲橋仙·弄巧》秦觀</p>
         </div>
-        <div class="lay">
-            <p style="font-size: 40px;">你的網路有點慢了</p>
-            <p style="font-size: 20px;">來篇長的</p>
+        <div class="lay 2" style="margin: 0;">
+            <p style="font-size: 40px;">天接雲濤連曉霧，</p>
+            <p style="font-size: 30px;text-align: left;">星河欲轉千帆舞。</p>
+            <p style="text-align: right;margin-top: 5px;">———《漁家傲·天接雲濤連曉霧》李清照</p>
         </div>
-        <div class="lay">
-            <div class="highlighta" id="drl">
-            <p style="font-size: 30px;margin:0 10px">夢幻·星源</p>
-            <p style="font-size: 20px;">徜徉於天地造化者神州大地，顧環己，山嶽崢嶸，峰巒屹立。
+        <div class="lay 3" style="margin: 0;">
+            <p style="font-size: 35px;">向晚暮風拂袖顧，嬋娟星海耀千古。</p>
+            <p style="font-size: 30px;text-align: cenetr;">亭台既去詩不復，星源䖏，</p>
+            <p style="font-size: 40px;text-align: right;">銀漢皎皎月明孤。</p>
+            <p style="text-align: right;margin-top: 5px;">———《漁家傲·星源》</p>
+        </div>
+        <div class="lay 4" style="margin: 0;">
+            <p style="font-size: 30px;">滄桑再顧，滄海一粟，</p>
+            <p style="font-size: 33px;text-align: right;">竹笛悠悠兮波起伏。</p>
+            <p style="text-align: right;margin-top: 5px;">———《夢幻·星源》</p>
+        </div>
+        <div class="lay 5" style="margin: 0;">
+            <p style="font-size: 33px;">顫顫百載風雲無數，梟者英雄義者負。</p>
+            <p style="font-size: 28px;text-align: right;">青磚黛瓦紅牆不復，別去亭臺樓閣，送走詩歌詞賦。</p>
+            <p style="text-align: right;margin-top: 5px;">———《夢幻·星源》</p>
+        </div>
+        <div class="lay 6" style="margin: 0;">
+            <p style="font-size: 35px;">日輪月轉一仰俯，河山越盡滄桑書。</p>
+            <p style="font-size: 30px;text-align: cenetr;">千里東風青雲負，乾坤舞，</p>
+            <p style="font-size: 40px;text-align: right;">扶搖浩浩寰宇舒。</p>
+            <p style="text-align: right;margin-top: 5px;">———《漁家傲·星源》</p>
+        </div>
+        <div class="lay 7" style="margin: 0;">
+            <p style="font-size: 40px;">九萬里風鵬正舉，</p>
+            <p style="font-size: 30px;text-align: left;">風休住，蓬舟吹取三山去。</p>
+            <p style="text-align: right;margin-top: 5px;">———《漁家傲·天接雲濤連曉霧》李清照</p>
+        </div>
+        <div class="lay l" style="margin: 0; justify-content: unset; height: calc(100% - 70px)">
+            <p style="font-size: 40px;text-align: left;margin: 0 0 10px 10px;">夢幻·星源</p>
+            <p style="font-size: 17px;
+            white-space-collapse:preserve;
+            word-break:keep-all;">徜徉於天地造化者神州大地，顧環己，山嶽崢嶸，峰巒屹立。
 徘徊在古今流轉間金波秋意，思泛起，時節逸遠，年隨風去。
 
 暮風兮向晚者忽吹拂，袍袖兮因風者颺簌簌。迎面撲，轉頭顧。
@@ -101,9 +105,9 @@
 
 山巔顧，千里扶搖極天而赴，虎咆龍吟殷壑穀。
 東風攜鵬啼鸞音，浩浩青雲負，盈於寰宇乾坤舞。
-星源䖏，一縷清風起窗以入，青冥紅霞布欞戶。
+星源䖏，一縷清風啓窗以入，青冥紅霞布欞戶。
 暮色傳蟬歌蟲鳴，悠悠明月浮，暢於天地神心舒。</p>
-            </div>
+            <p style="text-align: right;"></p>
         </div>
     </div>
     <a class="a" id="stt" onclick="
@@ -112,10 +116,41 @@
         $(this).remove()"><span style="font-size: 15px;">已載入完成</span><span style="font-size: 30px;">開始</span></a>
     <script>
         
+let dl=[-1,8,7,11,8,13,11,16];let nt=3850;
+        setTimeout(() => {
+            $('#ldb>.lay.0').removeClass('show');
+            setTimeout(() => {
+                $('#ldb>.lay.0').removeClass('show0');
+            }, 500);
+        }, nt-530);
+for (let i = 1; i < 8; i++) {
+    nt+=dl[i]*1000;
+    setTimeout(() => {
+        $('#ldb>.lay.'+i).addClass('show0');
+        setTimeout(() => {
+        $('#ldb>.lay.'+i).addClass('show');
+            
+        }, 20);
+        setTimeout(() => {
+            $('#ldb>.lay.'+i).removeClass('show');
+            setTimeout(() => {
+                $('#ldb>.lay.'+i).removeClass('show0');
+            }, 500);
+        }, dl[i]*1000-1000);
+    }, nt-dl[i]*1000);
+}
+    setTimeout(() => {
+        $('#ldb>.lay.l').addClass('show0');
+        setTimeout(() => {
+        $('#ldb>.lay.l').addClass('show');
+            
+        }, 20);
+    }, nt);
 
 document.body.onload=()=>{
     $('#stt').addClass('show')
 };
+
     </script>
 
     <div id="hd">
@@ -291,20 +326,79 @@ document.body.onload=()=>{
         <p style="font-size: 18px;">一些我主要做的專案，技拙見笑 >u-)o</p>
     </div></div>
     <div class="lay">
-        <div class="card">
+        <div class="card prj">
+            <p class="tit" style="">Windows 12 網頁版</p>
             <div class="body">
-                <p>---正在施工...---</p>
-                <p>Windows 12 網頁版</p>
-                <p>Nikov 在線工具</p>
-                <p>Tapple 頁面滾動特效</p>
-                <p>多分 破解版</p>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>star 6k+</span>
+                <p>使用 html, css 和 js 製作, 通過網頁的形式對將來的 Windows12 進行預測創新。
+                    精美的 ui 設計, 流暢豐富的動畫, 以及各種 (相對) 高級的功能。</p>
+                <div class="ops">
+                <a href="https://tjy-gitnub.github.io/win12/bios.html" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"/>
+                    <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg>立刻打開</a>
+                <a href="https://github.com/tjy-gitnub/win12" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>在 Github 查看</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card prj">
+            <p class="tit" style="">Tapple 滾動監測</p>
+            <div class="body">
+                
+                <p>一個滾動監測樣式庫, 靈感來源於 Apple 官網的動畫, 本網站一部分使用了此樣式庫。
+                    使用簡單方便, 僅需要設置 class。 但由於功能、運行效率, 硬體較差的低端設備使用會卡頓。</p>
+                <div class="ops">
+                <a href="https://tjy-gitnub.github.io/tapple" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"/>
+                    <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg>立即預覽</a>
+                <a href="https://github.com/tjy-gitnub/tapple" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>在 Github 查看</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card prj">
+            <p class="tit">多分破解版</p>
+            <div class="body">
+                
+                <p>破解了初中使用的「多分」在線成績查詢系統, 可以查看許多學生端查詢不到的資訊, 如排名、班級成績情況等。
+                    <span style="color: #aaa;">僅供學習交流使用。</span>
+                </p>
+                <div class="ops">
+                
+                <a href="https://github.com/tjy-gitnub/duofen" class="a" style="width: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>在 Github 查看</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card prj">
+            <p class="tit">Nikov 線上工具</p>
+            <div class="body">
+                <p>可以來整蠱你的朋友。 一個專用於坑人的網站, 在註冊過程中設置了重重關卡, 無人能夠成功。 可以推薦給你的朋友 (後果自行承擔)。 注意：高血壓患者慎用！</p>
+                <div class="ops">
+                <a href="https://tjy-gitnub.github.io/nikov" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"/>
+                    <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg>立刻打開</a>
+                <a href="https://github.com/tjy-gitnub/nikov" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>在 Github 查看</a></div>
             </div>
         </div>
     </div>
     <div class="lay" id="ft" style="user-select: none;">
         <div style="display: flex;flex-direction: column;flex-grow: 1;align-items: center;justify-content: center;">
         <svg viewBox="0,0,154,317" overflow="hidden" style="height: 20vh;"><g transform="translate(-495 -69)"><path d="M507.97 270.41C507.993 273.509 497.056 191.746 506.018 142.069 509.851 120.827 518.059 93.8332 539.196 82.081 556.985 72.1902 589.487 72.3983 600.615 89.9134 607.906 101.382 600.405 122.586 588.417 128.879 576.523 135.122 552.385 134.021 550.039 116.702 548.105 102.4 558.899 93.8824 574.326 99.35 584.516 102.96 580.672 113.551 580.672 113.551" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M520.611 148.936C519.836 144.32 522.753 137.42 527.556 136.586 532.748 135.687 539.04 141.528 539.464 146.56 539.865 151.268 534.963 157.196 530.037 157.484 525.719 157.737 521.298 153.026 520.611 148.936Z" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M617.535 133.038C617.127 129.352 619.829 124.405 623.427 123.636 628.049 122.646 634.005 126.953 635.214 131.553 636.439 136.187 633.529 143.651 628.831 144.42 623.574 145.28 618.125 138.369 617.535 133.038Z" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M538.491 152.407C538.491 152.407 559.35 161.627 574.086 160.378 602.187 157.997 617.677 143.632 617.489 143.495" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M569.562 133.495C569.562 133.495 567.416 165.912 569.204 180.157 570.992 194.401 570.398 201.495 570.398 201.495" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M527.49 181.096C527.49 181.096 547.689 182.704 557.805 182.474 569.841 182.206 582.005 181.713 593.782 179.214 601.606 177.555 616.49 171.496 616.49 171.496" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M526.491 231.499C526.491 231.499 526.54 217.638 533.163 210.697 546.562 196.664 574.854 204.072 591.752 204.034 617.299 203.978 624.491 191.499 624.491 191.499" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M526.579 249.506C526.579 249.506 527.118 264.591 525.516 271.881 521.969 287.989 508.611 301.292 506.9 317.7 505.528 330.87 507.495 345.241 513.937 356.789 517.77 363.662 531.486 372.506 531.486 372.506" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M526.018 317.508C526.018 317.508 520.78 327.281 529.683 336.73 535.787 343.205 545.488 336.331 545.488 336.331" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M621.491 219.503C621.491 219.503 604.286 226.405 589.908 225.999 578.591 225.68 561.199 220.3 552.911 228.5 540.056 241.218 547.932 271.505 544.543 292.879 543.395 300.122 540.491 314.503 540.491 314.503" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M590.353 231.506C590.353 231.506 567.908 254.905 563.825 269.94 561.47 278.623 559.732 286.309 565.817 296.865 570.164 304.407 591.895 309.147 593.388 326.271 594.416 338.021 587.522 346.371 581.273 354.459 574.613 363.081 555.49 374.506 555.49 374.506" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M575.492 254.504C575.492 254.504 596.538 254.921 603.828 261.326 610.366 267.072 614.858 277.183 613.114 285.696 610.618 297.855 587.218 312.504 587.218 312.504" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M569.492 273.508C569.492 273.508 582.031 278.006 587.271 281.918 597.389 289.476 607.499 298.57 612.422 310.1 616.478 319.599 617.94 331.103 614.779 340.925 609.665 356.815 596.281 372.686 582.507 379.508" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M564.364 320.508C564.364 320.508 571.743 326.748 568.794 335.061 565.84 343.377 554.49 350.508 554.49 350.508" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M636.575 159.501C636.575 159.501 642.736 200.056 639.611 243.143 637.345 274.403 629.495 313.501 629.495 313.501" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/></g></svg>
-        <p style="margin-top: 10px;color: #aaa;">2024 年 6 月</p>
+        <p style="margin-top: 10px;color: #aaa;">2024 年 7 月</p>
         <div style="margin-top: 20px;">
             <p>開頭「星源」二字來自 <a href="http://www.shufami.com" class="a jump" target="_blank">書法迷</a></p>
             <p>背景來自 <a href="http://www.microsoft.com/zh-cn/bing/bing-wallpaper" class="a jump">Bing Wallpaper</a></p>
