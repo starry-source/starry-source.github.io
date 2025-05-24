@@ -11,7 +11,7 @@ function scLdb() {
   }
 }
 
-function scHtml() {
+function scBody() {
   // Keep the original HTML scrolling effects (for elements outside #hd)
   let t = $(window).scrollTop();
   
@@ -36,7 +36,11 @@ function scHtml() {
 function init() {
   // Compute the height of #ldb for the fade effect
   ph = $("#ldb").innerHeight();
+  let cird=($("#ldb").innerHeight()**2+$("#ldb").innerWidth()**2)**0.5+20;
   $(":root").css("--ph", `${ph}px`);
+  $(":root").css("--cird", `${cird}px`);
+  $(":root").css("--cirl", `${-(cird-$("#ldb").innerWidth())/2}px`);
+  $(":root").css("--cirt", `${-(cird-ph)/2}px`);
 }
 
 
@@ -46,12 +50,12 @@ let g_percent = $(".shine");
 
 $("#ldb").on("scroll", scLdb);
 
-$(window).on("scroll", scHtml);
+$('body').on("scroll", scBody);
 
 window.onresize = () => {
   init();
   scLdb();
-  scHtml();
+  scBody();
 };
 
 // Reset scroll position on #ldb
@@ -66,4 +70,8 @@ if (location.search == "?light") {
   tgtheme();
 }
 
-$("html")[0].scroll(0, 0);
+$("body")[0].scroll(0, 0);
+
+// $('#ldb').hide();
+// $('#maincir').hide();
+// $('body').addClass('show');
