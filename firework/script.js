@@ -48,8 +48,8 @@ const stars = Array(200).fill().map(() => new Star());
 // 绘制背景
 function drawBackground() {
     const gradient = bgCtx.createLinearGradient(0, 0, 0, bgCanvas.height);
-    gradient.addColorStop(0, '#0e195c');
-    gradient.addColorStop(1, '#552456');
+    gradient.addColorStop(0, '#2d4084ff');
+    gradient.addColorStop(1, '#4f1b30ff');
     bgCtx.fillStyle = gradient;
     bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
 
@@ -115,7 +115,7 @@ class Firework {
             p.x += p.vx;
             p.y += p.vy;
             p.vy += 0.08; // 降低重力影响
-            p.alpha -= 0.005; // 降低消散速度
+            p.alpha -= 0.01; // 降低消散速度
             return p.alpha > 0;
         });
         return this.particles.length > 0;
@@ -155,20 +155,23 @@ function animate() {
     // 绘制背景和星星
     drawBackground();
 
-    // 更新倒计时
-    const now = new Date();
-    const newYear = new Date('2025-01-29T00:00:00');
-    const diff = newYear - now;
 
-    if (diff > 0) {
-        document.getElementById('timer').textContent = formatCountdown(diff);
-    } else {
-        document.getElementById('timer').textContent = "新年快乐！";
-        isNewYear = true;
+    if(!isNewYear){
+    // 更新倒计时
+        const now = new Date();
+        const newYear = new Date('2026-02-15T00:21:00');
+        const diff = newYear - now;
+
+        if (diff > 0) {
+            document.getElementById('timer').textContent = formatCountdown(diff);
+        } else {
+            document.getElementById('timer').innerHTML = '<img src="happynewyear.svg" draggable="false"/>';
+            isNewYear = true;
+        }
     }
 
     // 烟花效果
-    if (isNewYear && Math.random() < 0.04) { // 提高烟花出现频率
+    if (isNewYear && Math.random() < 0.03) { // 提高烟花出现频率
         fireworks.push(new Firework());
     }
 

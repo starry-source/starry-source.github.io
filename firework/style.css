@@ -30,19 +30,28 @@ canvas {
 }
 
 #timer {
-    font-family: "SimSun", serif;
+    font-weight: bold;
+    line-height: 1;
+    height: 20vh;
     font-size: 4em;
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
     margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+#timer>img{
+    max-width: 100%;
 }
 
 #blessing {
     /* font-family: "KaiTi", "STKaiti", serif; */
-    font-size: 1.5em;
-    line-height: 1.8;
+    /* font-size: 1.5em; */
+    font-size: 20px;
+    line-height: 1.7;
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
     opacity: 0.9;
     margin-bottom: -20px;
+    word-break: keep-all;
 }
 
 #border-decoration {
