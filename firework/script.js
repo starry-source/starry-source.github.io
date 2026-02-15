@@ -159,7 +159,7 @@ function animate() {
     if(!isNewYear){
     // 更新倒计时
         const now = new Date();
-        const newYear = new Date('2026-02-15T00:21:00');
+        const newYear = new Date('2026-02-17T00:00:00');
         const diff = newYear - now;
 
         if (diff > 0) {
@@ -168,6 +168,9 @@ function animate() {
             document.getElementById('timer').innerHTML = '<img src="happynewyear.svg" draggable="false"/>';
             isNewYear = true;
         }
+    } else {
+        if(document.getElementById('btn'))
+        document.getElementById('btn').remove();
     }
 
     // 烟花效果

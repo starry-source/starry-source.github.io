@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026新年倒计时</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/light.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/dark.png" media="(prefers-color-scheme: dark)">
 </head>
+
 <body>
+    <script>
+        function newYear() {
+            isNewYear = true;
+            document.getElementById('timer').innerHTML = '<img src="happynewyear.svg" draggable="false"/>';
+        }
+    </script>
+    <div id="btn" onclick="newYear();">直接过年 <svg height="100%" viewBox="0 0 1024 939" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path
+                d="M554.5,938.5C542.833,938.5 532.833,934.333 524.5,926C516.167,917.667 512,907.667 512,896C512,884.333 516.167,874.333 524.5,866L878.5,512L42.5,512C30.8333,512 20.8333,507.833 12.5,499.5C4.16667,491.167 0,481.167 0,469.5C0,463.5 1.08333,457.917 3.25,452.75C5.41667,447.583 8.41667,443.083 12.25,439.25C16.0833,435.417 20.5833,432.333 25.75,430C30.9167,427.667 36.5,426.5 42.5,426.5L878,426.5L524.5,73C516.167,64.6667 512,54.5 512,42.5C512,30.8334 516.167,20.8334 524.5,12.5C532.833,4.16669 542.833,0 554.5,0C566.5,0 576.667,4.16669 585,12.5L1010,437.5C1014.67,442.167 1018.17,447 1020.5,452C1022.83,457 1024,462.833 1024,469.5C1024,476.167 1022.75,482 1020.25,487C1017.75,492 1014.17,496.833 1009.5,501.5L585,926C576.667,934.333 566.5,938.5 554.5,938.5Z"
+                fill="#FFFFFF" fill-opacity="1">
+            </path>
+        </svg></div>
     <canvas id="bgCanvas"></canvas>
     <canvas id="fireworkCanvas"></canvas>
     <div id="border-decoration">
@@ -24,4 +41,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

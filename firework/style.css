@@ -43,6 +43,45 @@ canvas {
     max-width: 100%;
 }
 
+#btn{
+    font-size: 25px;
+    background-color: rgb(132, 84, 25);
+    color: #fff;
+    border-radius: 15px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+    user-select: none;
+    cursor: pointer;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 20;
+    transition: 100ms;
+}
+
+#btn:hover,
+#btn:active{
+    background-color: rgb(163, 102, 27);
+}
+
+#btn>svg{
+    height: 20px;
+    transition: transform 100ms 70ms;
+}
+
+#btn:hover>svg,
+#btn:active>svg{
+    transform: translateX(8px);
+}
+
+#btn:active{
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
 #blessing {
     /* font-family: "KaiTi", "STKaiti", serif; */
     /* font-size: 1.5em; */
